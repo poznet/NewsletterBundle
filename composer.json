@@ -1,0 +1,30 @@
+{
+    "name" : "poznet/NewsletterBundle",
+    "description" : "Simple Newsletter Bundle for symfony",
+    "type" : "symfony-bundle",
+    "authors" : [{
+        "name" : "MG",
+        "email" : "michal@glajc.pl"
+    }],
+    "keywords" : [
+        "newsletter bundle"
+    ],
+    "license" : [
+        "MIT"
+    ],
+    "require" : {
+    },
+    "autoload" : {
+        "psr-0" : {
+            "Poznet\\NewsletterBundle" : ""
+        }
+    },
+    "target-dir" : "Poznet/NewsletterBundle",
+    "repositories" : [{}
+    ],
+    "extra" : {
+    "branch-alias" : {
+            "dev-master" : "2.2-dev"
+        }
+    }
+}
