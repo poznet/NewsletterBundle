@@ -14,6 +14,7 @@ class addSubscriberListener
     protected $session;
     protected $templating;
     protected $mailer;
+    protected $translator;
     //parameters
     private $from;
     private $url;
@@ -21,12 +22,13 @@ class addSubscriberListener
  
     // Inject your services to the constructor etc..
  	
- 	public function __construct($em,$validator,$session,$templating,$mailer,$from,$url){
+ 	public function __construct($em,$validator,$session,$templating,$mailer,$translator,$from,$url){
  		$this->em=$em;
         $this->validator=$validator;
         $this->session=$session;
         $this->templating=$templating;
         $this->mailer=$mailer;
+        $this->translator=$translator;
         $this->from=$from;
         $this->url=$url;
      	}
@@ -36,7 +38,7 @@ class addSubscriberListener
             $em=$this->em;
     		$email=$event->getEmail();
             $emailConstraint = new EmailConstraint();
-            $emailConstraint->message = 'Podany adres e-mail jest niepoprawny';
+            $emailConstraint->message = $this->translator->trans('Podany adres e-mail jest niepoprawny');
             $errors = $this->validator->validateValue($email,$emailConstraint );
             $kom='';
             if($errors!=''){
@@ -56,7 +58,7 @@ class addSubscriberListener
                     $em->persist($konto);
                     $em->flush();
                       $message = \Swift_Message::newInstance()
-                      ->setSubject('Potwierdzenie rejestracji w newsletterze')
+                      ->setSubject($this->translator->trans('Potwierdzenie rejestracji w newsletterze'))
                       ->setFrom($this->from)
                       ->setTo($konto->getEmail())
                       ->setBody($this->templating->render('PoznetNewsletterBundle:Mail:email_newsletter_rejestracja.txt.twig',array('id'=>$konto->getId(),'url'=>$this->url,'kod'=>$konto->getconfrimationCode())) ,'text/html');
