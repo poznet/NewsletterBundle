@@ -12,8 +12,7 @@ Simple Newsletter Bundle  for  Symfony2
 
 =======
 In some  of my projects  i needed simple  newsletter. I didn't like existing, so i created one .
-
->>>>>>> 0e195485f829a39a5d7178b34fea81f48694ce26
+ 
 Goals (working) : 
 
  - No frontend ( you need  to provide your own)
