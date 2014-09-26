@@ -33,6 +33,7 @@ Installation
 In parameters.yml define :
 
 > newsletter_from: email "from" in letter header 
+
 > newsletter_url :  http://..   - url of  your application
 
 
