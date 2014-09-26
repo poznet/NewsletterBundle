@@ -1,7 +1,0 @@
-services:
-    newsletter_bundle.listener.addsubsciber:
-        class: PoznetNewsletterBundleEventListeneraddSubscriberListener
-        arguments:
-            em: "@doctrine.orm.entity_manager"
-        tags:
-            - { name: kernel.event_listener, event: foo_bundle.post.comment_added, method: onCommentEvent }

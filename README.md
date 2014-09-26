@@ -30,13 +30,32 @@ Feel free to contribute to this bundle
 
 Installation 
 ================
-In parameters.yml define :
+In app/config/parameters.yml define :
 
 > newsletter_from: email "from" in letter header 
 
 > newsletter_url :  http://..   - url of  your application
 
+> locale:en   
+
+In app/config/config.yml  enable translation ( if you want language another than native - polish)
+
+>framework:
+
+>	translator: { fallback: en }
 
  Usage
 ================
 
+In place where you want  to add address  to newsletter  you need to : 
+1) add namespace
+
+> use Poznet\NewsletterBundle\Event\submitEvent;
+
+2) And in  your  code add
+
+  	$event = new submitEvent('your@email.com'); 
+    $dispatcher = $this->get('event_dispatcher'); 
+    $dispatcher->dispatch('poznet.events.addlistener', $event);
+
+It's  that  simple :) 
