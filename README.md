@@ -48,6 +48,7 @@ In app/config/config.yml  enable translation ( if you want language another than
 ================
 
 In place where you want  to add address  to newsletter  you need to : 
+
 1) add namespace
 
 > use Poznet\NewsletterBundle\Event\submitEvent;
