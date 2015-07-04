@@ -17,12 +17,14 @@
     },
     "autoload" : {
         "psr-0" : {
-            "Poznet\\NewsletterBundle" : ""
+            "Poznet\\NewsletterBundle" : "src"
         }
-    },
-    "target-dir": "poznet/NewsletterBundle",
-
-    "config": {
-        "bin-dir": "bin"
     }
+   
 }
+
+
+ 
+         
+  
+ 
