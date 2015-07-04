@@ -31,8 +31,10 @@ Installation
 In app/config/parameters.yml define :
 ```
 newsletter_from: email  # "from" in letter header 
-newsletter_url :  http://.. #  - full url of  your application route  where you want to confirm subscribers ( confirmation via link)
+newsletter_url :  http://.. #  - full url of  your application/website  
 ```
+
+You  need to have route to  (newsletter_url parameter) /newletter-confirm/{{id}}/{{code}} as a confirmation action
  
  ## Usage
  

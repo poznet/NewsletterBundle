@@ -83,7 +83,7 @@ class newsletter {
                       ->setSubject($this->translator->trans('Potwierdzenie rejestracji w newsletterze'))
                       ->setFrom($this->from)
                       ->setTo($user->getEmail())
-                      ->setBody($this->templating->render('PoznetNewsletterBundle:Mail:email_newsletter_rejestracja.txt.twig',array('id'=>$user->getId(),'url'=>$this->url,'kod'=>$user->getconfrimationCode())) ,'text/html');
+                      ->setBody($this->templating->render('PoznetNewsletterBundle:Mail:email_newsletter_rejestracja.txt.twig',array('id'=>$user->getId(),'url'=>$this->url,'code'=>$user->getconfrimationCode())) ,'text/html');
                 
                     $this->mailer->send($message);
         return true;
