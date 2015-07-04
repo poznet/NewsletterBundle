@@ -111,6 +111,12 @@ class Subscribers
         $this->revokeCode=new Password();
 
     }
+    
+    public function confirm(){
+        $this->confirmationDate=new \DateTime('now');
+        $this->confirmationIp=$_SERVER['REMOTE_ADDR'];
+        $this->setConfirmed(true);
+    }
 
     public function getId()
     {

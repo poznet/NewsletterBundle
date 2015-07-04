@@ -87,8 +87,26 @@ class newsletter {
                 
                     $this->mailer->send($message);
         return true;
-                
-     
+        
+    }
+    
+    public function confirmSubscriber($id,$code){
+        $user=$this->em->getRepository('PoznetNewsletterBundle:Subscribers')->findOneById($id);
+        if(!$user){
+            $this->error=$this->templating->render('PoznetNewsletterBundle:Infos:error.html.twig',array('error'=>'Niepoprawne dane potwierdzające')); 
+            return false;           
+        }
+        if($user-> getConfirmed()==true){
+            $this->error=$this->templating->render('PoznetNewsletterBundle:Infos:error.html.twig',array('error'=>'Konto już jest aktywowane')); 
+            return false;           
+        }
+        if($code==$user->getConfrimationCode()){
+            $user->Confirm();
+            $this->em->flush();
+            return true;
+            
+        }
+        
         
     }
 }

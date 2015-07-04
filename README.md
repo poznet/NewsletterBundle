@@ -55,6 +55,28 @@ in above  code :
 -email is passed from form (by request).
 -$this->get('poznet.newsletter')->addSubscriber() - return true if subscriber was added correctly , fale if  not, and also  you  can use ->getError()  to get message about reason.
 
+ it's  that  simple :) to add  new subscriber
+ 
+ #### Confirmation 
+ 
+ Create route and  bind  it  with controller (use your own)
+  ```
+ newsletter_confirm:
+    pattern: /newsletter-confirm/{id}/{code}
+    defaults: { _controller: GiercowniaFrontendBundle:Newsletter:newsletterConfirm}    
+    ```
+In controller : 
+```
+		$session = new Session();
+        $session->start();
 
+        if(!$this->get('poznet.newsletter')->confirmSubscriber($id,$code)){
+           $session->getFlashBag()->add('notice', $this->get('poznet.newsletter')->getError());
+        }else{
+            $session->getFlashBag()->add('notice', 'Account has been Confirmed');
+        }
+        return $this->redirectToRoute('index');
+```
 
- it's  that  simple :) to add  new subscribet 
+index -  is a  exit route
+
