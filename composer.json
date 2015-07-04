@@ -1,6 +1,7 @@
 {
     "name" : "poznet/NewsletterBundle",
     "description" : "Simple Newsletter Bundle for symfony",
+    "type": "symfony-bundle",
     "authors" : [{
         "name" : "MG",
         "email" : "michal@glajc.pl"
@@ -16,7 +17,12 @@
     },
     "autoload" : {
         "psr-0" : {
-            "Poznet\\NewsletterBundle" : "src"
+            "Poznet\\NewsletterBundle" : ""
         }
-    }
+    },
+    "target-dir": "poznet/NewsletterBundle",
+
+    "config": {
+        "bin-dir": "bin"
+    },
 }
