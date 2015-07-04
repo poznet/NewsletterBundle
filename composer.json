@@ -1,7 +1,6 @@
 {
     "name" : "poznet/NewsletterBundle",
     "description" : "Simple Newsletter Bundle for symfony",
-    "type" : "symfony-bundle",
     "authors" : [{
         "name" : "MG",
         "email" : "michal@glajc.pl"
@@ -21,11 +20,5 @@
         }
     },
     "target-dir" : "Poznet/NewsletterBundle",
-    "repositories" : [{}
-    ],
-    "extra" : {
-    "branch-alias" : {
-            "dev-master" : "0.1-dev"
-        }
-    }
+   
 }
