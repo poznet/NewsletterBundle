@@ -18,19 +18,4 @@
     </services>
     -->
  
-
-<services>
-<service id="newsletter_bundle.add_subscriber" class="Poznet\NewsletterBundle\EventListener\addSubscriberListener">
-    <argument  type="service" id="doctrine.orm.entity_manager"/> 
-    <argument  type="service" id="validator"/> 
-    <argument  type="service" id="session"/> 
-    <argument  type="service" id="templating"/> 
-    <argument  type="service" id="mailer"/> 
-    <argument  type="service" id="translator"/> 
-    <argument>%newsletter_from%</argument>
-    <argument>%newsletter_url%</argument>
-   
-            <tag name="kernel.event_listener" event="poznet.events.addlistener" method="onaddListenerEvent" />
-</service>
-</services>    
 </container>
