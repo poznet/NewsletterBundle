@@ -36,7 +36,7 @@ newsletter_url :  http://.. #  - full url of  your application/website
 
 You  need to have route to  (newsletter_url parameter) /newletter-confirm/{{id}}/{{code}} as a confirmation action
  
- ## Usage
+## Usage
  
 
 #### Addnig  new suscriber
