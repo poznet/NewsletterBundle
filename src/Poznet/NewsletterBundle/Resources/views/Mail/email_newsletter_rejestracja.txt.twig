@@ -1,0 +1,21 @@
+<html>
+<head></head>
+<body>
+<b>{% trans %}Witamy{% endtrans %}</b><br/>
+<br/>
+{% trans %}Twój adres  email został zarejestrowany w  newslettrze{% endtrans %}  <br/>
+<br/>
+{% trans %}Aby potwierdzić rejestracje wejdź na stronę{% endtrans %} <br/>
+<a href="{{url}}/newsletter-confirm/{{id}}/{{code}}">{{url}}/newsletter-confirm/{{id}}/{{code}}</a><br/>
+<br/>
+<br/>
+{% trans %}Jeśli nie potwierdzisz (nie wejdziesz na podany link) konto nie zostanie aktywowane, a twój adres e-mail zostanie usunięty z bazy .{% endtrans %} <br/>
+
+
+<br/><br/><br/>
+--<br/>
+{% trans %}Wiadomość wysłana automatycznie. Prosimy na nią nie odpowiadać.{% endtrans %}<br/> 
+
+</body>
+</html>
+

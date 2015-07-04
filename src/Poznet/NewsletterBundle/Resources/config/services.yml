@@ -1,0 +1,5 @@
+services:
+   poznet.newsletter:
+      class:     Poznet\NewsletterBundle\Services\newsletter
+      arguments: [ @doctrine.orm.default_entity_manager,@templating,@translator,@validator,@mailer,%newsletter_from%,%newsletter_url% ]  
+ 
