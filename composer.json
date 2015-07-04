@@ -18,7 +18,5 @@
         "psr-0" : {
             "Poznet\\NewsletterBundle" : "src"
         }
-    },
-   
-   
+    }
 }
