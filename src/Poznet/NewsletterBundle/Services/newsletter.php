@@ -55,10 +55,8 @@ class newsletter {
         $errors = $this->validator->validateValue($email,$emailConstraint );
         if($errors!=''){
            $this->error=$this->templating->render('PoznetNewsletterBundle:Infos:error.html.twig',array('error'=>$errors)); 
-           echo 'blee';
-            return false;
+           return false;
         }    
-        echo 'ok';
         return true;
     }
     
