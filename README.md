@@ -33,7 +33,7 @@ newsletter_from: email  # "from" in letter header
 newsletter_url :  http://.. #  - full url of  your application route  where you want to confirm subscribers ( confirmation via link)
 ```
  
- ##Usage
+ ## Usage
  
 
 #### Addnig  new suscriber
