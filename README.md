@@ -4,7 +4,7 @@ NewsletterBundle
 ================
 Simple Newsletter Bundle  for  Symfony2
 
-[![Code Climate](https://codeclimate.com/github/poznet/NewsletterBundle/badges/gpa.svg)](https://codeclimate.com/github/poznet/NewsletterBundle) [![Test Coverage](https://codeclimate.com/github/poznet/NewsletterBundle/badges/coverage.svg)](https://codeclimate.com/github/poznet/NewsletterBundle/coverage)
+[![Code Climate](https://codeclimate.com/github/poznet/NewsletterBundle/badges/gpa.svg)](https://codeclimate.com/github/poznet/NewsletterBundle) [![Test Coverage](https://codeclimate.com/github/poznet/NewsletterBundle/badges/coverage.svg)](https://codeclimate.com/github/poznet/NewsletterBundle/coverage) [![Build Status](https://travis-ci.org/poznet/NewsletterBundle.svg?branch=master)](https://travis-ci.org/poznet/NewsletterBundle)
 
 =======
 In some  of my projects  i needed simple  newsletter. I didn't like existing, so i created one .
