@@ -13,10 +13,11 @@
         "MIT"
     ],
     "require" : {
+    "php": ">=5.3"
     },
     "autoload" : {
         "psr-0" : {
-            "Poznet\\NewsletterBundle" : ""
+            "Poznet\\NewsletterBundle" : "src"
         }
     },
     "target-dir" : "Poznet/NewsletterBundle",
