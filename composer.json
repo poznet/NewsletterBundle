@@ -19,6 +19,6 @@
             "Poznet\\NewsletterBundle" : "src"
         }
     },
-    "target-dir" : "Poznet/NewsletterBundle"
+   
    
 }
