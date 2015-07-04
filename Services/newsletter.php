@@ -23,14 +23,16 @@ class newsletter {
     private $templating;
     private $translator;
     private $validator;
+    private $mailer;
     private $from;
     private $url;
         
-    public function __construct($em=null,$temp=null,$trans=null,$validator=null,$from=null,$url=null) {
+    public function __construct($em=null,$temp=null,$trans=null,$validator=null,$mailer=null,$from=null,$url=null) {
         $this->em=$em;
         $this->templating=$temp;
         $this->translator=$trans;
         $this->validator=$validator;
+        $this->mailer=$mailer;
         $this->from=$from;
         $this->url=$url;        
            
@@ -40,16 +42,14 @@ class newsletter {
     public function getError(){
         return $this->error;
     }
+    
     public function checkEmail($email){
         
         $wynik=$this->em->getRepository('PoznetNewsletterBundle:Subscribers')->findOneByEmail($email);
         if($wynik){
             $this->error=$this->templating->render('PoznetNewsletterBundle:Infos:error_already_added.html.twig');
-          echo 'blee';
-            return false;
-            
-        }
-        
+                return false;
+           }
         $emailConstraint = new EmailConstraint();
         $emailConstraint->message = $this->translator->trans('Podany adres e-mail jest niepoprawny');
         $errors = $this->validator->validateValue($email,$emailConstraint );
@@ -62,6 +62,15 @@ class newsletter {
         return true;
     }
     
+    public function getEmailConfirmatonCode($email){
+         $wynik=$this->em->getRepository('PoznetNewsletterBundle:Subscribers')->findOneByEmail($email);
+         if($wynik){
+             return $wynik->getConfirmationCode();
+         }
+        return false;
+    }
+    
+    
     public function addSubscriber($email){
         if(!$this->checkEmail($email)){
             return false;
@@ -73,8 +82,8 @@ class newsletter {
          $message = \Swift_Message::newInstance()
                       ->setSubject($this->translator->trans('Potwierdzenie rejestracji w newsletterze'))
                       ->setFrom($this->from)
-                      ->setTo($konto->getEmail())
-                      ->setBody($this->templating->render('PoznetNewsletterBundle:Mail:email_newsletter_rejestracja.txt.twig',array('id'=>$konto->getId(),'url'=>$this->url,'kod'=>$konto->getconfrimationCode())) ,'text/html');
+                      ->setTo($user->getEmail())
+                      ->setBody($this->templating->render('PoznetNewsletterBundle:Mail:email_newsletter_rejestracja.txt.twig',array('id'=>$user->getId(),'url'=>$this->url,'kod'=>$user->getconfrimationCode())) ,'text/html');
                 
                     $this->mailer->send($message);
         return true;

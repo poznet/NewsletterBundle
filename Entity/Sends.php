@@ -7,7 +7,7 @@ use Doctrine\ORM\Mapping as ORM;
 /**
  * Sends
  *
- * @ORM\Table()
+ * @ORM\Table(name="Newsletter_Sends")
  * @ORM\Entity(repositoryClass="Poznet\NewsletterBundle\Entity\SendsRepository")
  */
 class Sends

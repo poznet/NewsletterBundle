@@ -8,7 +8,7 @@ use Poznet\NewsletterBundle\Classes\Password;
 /**
  * Subscribers
  *
- * @ORM\Table()
+ * @ORM\Table(name="Newsletter_Subscribers")
  * @ORM\Entity(repositoryClass="Poznet\NewsletterBundle\Entity\SubscribersRepository")
  */
 class Subscribers

@@ -44,7 +44,7 @@ In place where you want  to add address  to newsletter  you need to  (example in
 public function newsletterAddAction(Request $request)
  {
    $email= $request->request->get('email'); 
-   if(!$this->get('poznet.newsletter')->addSubscriber('xx2@xx.pl'))         
+   if(!$this->get('poznet.newsletter')->addSubscriber($email))         
    echo $this->get('poznet.newsletter')->getError();
  }
 ```
