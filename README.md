@@ -57,14 +57,14 @@ in above  code :
 
  it's  that  simple :) to add  new subscriber
  
- #### Confirmation 
+#### Confirmation
  
  Create route and  bind  it  with controller (use your own)
-  ```
+```
  newsletter_confirm:
     pattern: /newsletter-confirm/{id}/{code}
     defaults: { _controller: GiercowniaFrontendBundle:Newsletter:newsletterConfirm}    
-    ```
+```
 In controller : 
 ```
 		$session = new Session();
